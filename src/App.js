@@ -3,16 +3,14 @@ import "App.css";
 import { Route, Switch } from "react-router-dom";
 import Router from "components/router";
 
-import Timeline from "components/Timeline";
+import Home from "pages/Home";
 
 function App() {
   return (
     <div className="App">
       <Router>
         <Switch>
-          <Route path="">
-            <Timeline />
-          </Route>
+          <Route path="/" component={Home} />
         </Switch>
       </Router>
     </div>
