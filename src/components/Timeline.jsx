@@ -32,7 +32,7 @@ export default function Timeline() {
   }, [isScrollEnds]);
   return (
     <ImageList
-      variant="standard"
+      variant="masonry"
       cols={3}
       gap={8}
       sx={{
