@@ -1,21 +1,41 @@
 import "antd/dist/antd.css";
 import "App.css";
-import { Route, Switch } from "react-router-dom";
-import Router from "components/router";
-
+import { Route, Switch, useLocation } from "react-router-dom";
 import Home from "pages/Home";
 import Post from "pages/Post";
+import SlideRoutes from "react-slide-routes";
+import Router from "./components/router";
+import { StyledEngineProvider, ThemeProvider } from "@mui/material/styles";
+import { CssBaseline } from "@mui/material";
+import theme from "./theme";
+import { ViewportProvider } from "./components/ViewportProvider";
+
+const SlideContainer = () => {
+  const location = useLocation();
+  return (
+    <Switch>
+      <SlideRoutes location={location}>
+        <Route path="/" component={Home} exact />
+        <Route path="/posts/:postId" component={Post} />
+      </SlideRoutes>
+    </Switch>
+  );
+};
 
 function App() {
   return (
-    <div className="App">
-      <Router>
-        <Switch>
-        <Route path="/posts/:id" component={Post} />
-          <Route path="/" component={Home} />
-        </Switch>
-      </Router>
-    </div>
+    <StyledEngineProvider injectFirst>
+      <CssBaseline />
+      <ThemeProvider theme={theme}>
+        <div className="App">
+          <Router>
+            <ViewportProvider>
+              <SlideContainer />
+            </ViewportProvider>
+          </Router>
+        </div>
+      </ThemeProvider>
+    </StyledEngineProvider>
   );
 }
 

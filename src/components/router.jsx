@@ -5,15 +5,6 @@ const Router = ({ children }) => {
     <BrowserRouter
       getUserConfirmation={(message, callback) => {
         callback(true);
-        /*handleDialog({
-          content: message,
-          handleAgreementCallback: () => {
-            callback(true);
-          },
-          handleDisagreementCallback: () => {
-            callback(false);
-          },
-        });*/
       }}
     >
       {children}
