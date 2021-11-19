@@ -10,6 +10,7 @@ import { CssBaseline } from "@mui/material";
 import theme from "./theme";
 import { ViewportProvider } from "./components/ViewportProvider";
 import { LoadingProvider } from "./components/LoadingProvider";
+import User from "./pages/User";
 
 const SlideContainer = () => {
   const location = useLocation();
@@ -18,6 +19,7 @@ const SlideContainer = () => {
       <SlideRoutes location={location}>
         <Route path="/" component={Home} exact />
         <Route path="/posts/:postId" component={Post} />
+        <Route path="/user" component={User} />
       </SlideRoutes>
     </Switch>
   );
