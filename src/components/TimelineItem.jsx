@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 // ref: https://unsplash.com/documentation#supported-parameters
 const thumbnailOptions = {
     // 최대 화면에 160px 정도 크기로 나오는데
@@ -10,8 +12,10 @@ const thumbnailOptions = {
 
 const q = new URLSearchParams(thumbnailOptions).toString()
 
-export default function Thumbnail({ imageUrl }) {
+export default function Thumbnail({ imageUrl, id }) {
     return (
-        <img src={`${imageUrl}&${q}`} alt="thumbnail"></img>
+        <Link to={`/posts/${id}`}>
+            <img src={`${imageUrl}&${q}`} alt="thumbnail"></img>
+        </Link>
     )
 }
