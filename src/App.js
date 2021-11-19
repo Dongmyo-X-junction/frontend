@@ -1,9 +1,9 @@
 import "antd/dist/antd.css";
-import "./App.css";
+import "App.css";
 import { Route, Switch } from "react-router-dom";
-import Router from "./components/router";
+import Router from "components/router";
 
-import Timeline from "./components/Timeline";
+import Timeline from "components/Timeline";
 
 function App() {
   return (

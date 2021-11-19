@@ -1,5 +1,5 @@
 import TimelineItem  from "./TimelineItem";
-import posts from "../data/posts";
+import posts from "data/posts";
 
 import "./Timeline.scss";
 
