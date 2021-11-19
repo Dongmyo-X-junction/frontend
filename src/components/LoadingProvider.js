@@ -1,5 +1,5 @@
 import { createContext, useState } from "react";
-import { Backdrop, CircularProgress, Portal, styled } from "@mui/material";
+import { Backdrop, CircularProgress, styled } from "@mui/material";
 
 const StyledBackdropContainer = styled(Backdrop)(({ theme }) => ({
   width: "100vw",

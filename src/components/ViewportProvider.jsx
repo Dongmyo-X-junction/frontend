@@ -2,10 +2,8 @@ import {
   BottomNavigation,
   BottomNavigationAction,
   Box,
-  Paper,
   styled,
   Toolbar,
-  useTheme,
 } from "@mui/material";
 import { createContext, useCallback, useState } from "react";
 import { NavLink } from "react-router-dom";

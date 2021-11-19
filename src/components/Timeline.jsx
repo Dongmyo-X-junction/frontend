@@ -1,7 +1,7 @@
 import TimelineItem from "./TimelineItem";
 import requestPosts from "../data/posts";
-import { ImageList, styled } from "@mui/material";
-import { useCallback, useContext, useEffect, useState } from "react";
+import { ImageList } from "@mui/material";
+import { useContext, useEffect, useState } from "react";
 import { ScrollContext } from "./ViewportProvider";
 import { LoadingContext } from "./LoadingProvider";
 
