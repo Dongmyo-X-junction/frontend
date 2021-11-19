@@ -9,6 +9,7 @@ import { StyledEngineProvider, ThemeProvider } from "@mui/material/styles";
 import { CssBaseline } from "@mui/material";
 import theme from "./theme";
 import { ViewportProvider } from "./components/ViewportProvider";
+import { LoadingProvider } from "./components/LoadingProvider";
 
 const SlideContainer = () => {
   const location = useLocation();
@@ -29,9 +30,11 @@ function App() {
       <ThemeProvider theme={theme}>
         <div className="App">
           <Router>
-            <ViewportProvider>
-              <SlideContainer />
-            </ViewportProvider>
+            <LoadingProvider>
+              <ViewportProvider>
+                <SlideContainer />
+              </ViewportProvider>
+            </LoadingProvider>
           </Router>
         </div>
       </ThemeProvider>

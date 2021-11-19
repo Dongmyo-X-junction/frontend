@@ -1,23 +1,15 @@
 import TimelineItem from "./TimelineItem";
 import requestPosts from "../data/posts";
 import { ImageList, styled } from "@mui/material";
-import { useContext, useEffect, useState } from "react";
+import { useCallback, useContext, useEffect, useState } from "react";
 import { ScrollContext } from "./ViewportProvider";
-
-const StyledTimeline = styled("div")({
-  padding: "5px",
-  display: "grid",
-  gridTemplateColumns: "repeat(3, 1fr)",
-  gap: "5px",
-  "& img": {
-    width: "100%",
-  },
-});
+import { LoadingContext } from "./LoadingProvider";
 
 export default function Timeline() {
   const [posts, setPosts] = useState([]);
   const { isScrollEnds } = useContext(ScrollContext);
   const [isFetching, setIsFetching] = useState(false);
+  const { setLoading } = useContext(LoadingContext);
   useEffect(() => {
     if (posts.length === 0) {
       loadItems(0);
@@ -28,8 +20,10 @@ export default function Timeline() {
     requestPosts(lastIdx, 15, 500).then((data) => {
       setPosts([...posts, ...data]);
       setIsFetching(false);
+      setLoading(false);
     });
     setIsFetching(true);
+    setLoading(true);
   };
   useEffect(() => {
     if (isScrollEnds) {
@@ -38,7 +32,7 @@ export default function Timeline() {
   }, [isScrollEnds]);
   return (
     <ImageList
-      variant="masonry"
+      variant="standard"
       cols={3}
       gap={8}
       sx={{
