@@ -4,6 +4,10 @@ import BackButton from "components/BackButton";
 import { useParams } from "react-router-dom";
 import { generatePost } from "../data/posts";
 import { styled } from "@mui/material";
+import Avatar from '@mui/material/Avatar';
+import PersonIcon from '@mui/icons-material/Person';
+import { Tag } from 'antd';
+import { getRandomColor } from "utils/colors";
 
 const thumbnailOptions = {
   // 최대 화면에 160px 정도 크기로 나오는데
@@ -16,7 +20,14 @@ const thumbnailOptions = {
 const q = new URLSearchParams(thumbnailOptions).toString();
 
 const StyledImage = styled("img")`
-  width: 500px;
+  width: 100%;
+`;
+
+const StyledProfileContainer = styled("div")`
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  margin-top: 5px;
 `;
 
 export default function Post() {
@@ -36,8 +47,20 @@ export default function Post() {
   useEffect(() => {
     setPost(generatePost(postId));
   }, [postId]);
+
   return (
     <>
+      <StyledProfileContainer>
+        <Avatar sx={{ marginRight: "10px" }}>
+          <PersonIcon />
+        </Avatar>
+        <div style={{ textAlign: "left" }}>
+          <strong>{post.author}</strong>
+          <div>
+            {post.tags.map(tag => <Tag color={getRandomColor()}>{tag}</Tag>)}
+          </div>
+        </div>
+      </StyledProfileContainer>
       <StyledImage src={post.imageUrl && `${post.imageUrl}&${q}`} />
     </>
   );

@@ -39,3 +39,8 @@
     transform: rotate(360deg);
   }
 }
+
+.ant-tag {
+  font-weight: bold;
+  letter-spacing: -0.5px;
+}
