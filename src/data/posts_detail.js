@@ -503,32 +503,37 @@ export const authors = [
 
 export const hashtags = ["Fashion", "Common Goods", "Awesome"]; // 적당한 해시태그 추가하기
 
-const subItmes = [
+export const subItmes = [
   {
     image:
-      "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8",
+      "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=200&h=200",
     cost: {
       new: 75,
     },
+    title: "Basic Shirt",
     desc: "The shirt has a round ribbed neckline and long sleeves that are dropped at the shoulders.",
     tags: ["trend", "hot"],
   },
   {
     image:
-      "https://images.unsplash.com/photo-1539533113208-f6df8cc8b543?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8",
+      "https://images.unsplash.com/photo-1539533113208-f6df8cc8b543?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=200&h=200",
     cost: {
       new: 200,
       used: 100,
     },
+
+    title: "Classic Coat by Marimekko",
+
     desc: "The coat has a fixed hood with drawstrings.",
     tags: ["resell", "COST-EFFICIENCY"],
   },
   {
     image:
-      "https://images.unsplash.com/photo-1574184558968-228bdf3bdfd6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8",
+      "https://images.unsplash.com/photo-1574184558968-228bdf3bdfd6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=200&h=200",
     cost: {
       new: 45,
     },
+    title: "Warm Hat",
     desc: "The hat has a topstitched brim and a detachable Velcro patch detail.",
     tags: ["brand-new", "Gentle"],
   },
@@ -537,28 +542,28 @@ const subItmes = [
 const purchase = [
   {
     image:
-      "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8",
+      "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=200&h=200",
     cost: 75,
     checked: true,
     new: true,
   },
   {
     image:
-      "https://images.unsplash.com/photo-1539533113208-f6df8cc8b543?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8",
+      "https://images.unsplash.com/photo-1539533113208-f6df8cc8b543?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=200&h=200",
     cost: 200,
     checked: true,
     new: true,
   },
   {
     image:
-      "https://images.unsplash.com/photo-1539533113208-f6df8cc8b543?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8",
+      "https://images.unsplash.com/photo-1539533113208-f6df8cc8b543?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=200&h=200",
     cost: 150,
     checked: false,
     new: false,
   },
   {
     image:
-      "https://images.unsplash.com/photo-1574184558968-228bdf3bdfd6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8",
+      "https://images.unsplash.com/photo-1574184558968-228bdf3bdfd6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=200&h=200",
     cost: 45,
     checked: true,
     new: true,

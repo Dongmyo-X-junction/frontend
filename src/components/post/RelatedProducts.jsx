@@ -1,6 +1,6 @@
-import { styled } from '@mui/material';
-import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
-import { Image, Tag } from 'antd';
+import { styled } from "@mui/material";
+import ShoppingBagIcon from "@mui/icons-material/ShoppingBag";
+import { Image, Tag } from "antd";
 
 const StyledContainer = styled("div")`
   margin: 30px 20px 0;
@@ -26,7 +26,7 @@ const StyledCard = styled("div")`
   height: 100px;
   display: flex;
   align-items: center;
-  border: 1px solid rgba(0,0,0,0.1);
+  border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 5px;
   overflow: hidden;
   & + & {
@@ -46,37 +46,81 @@ const StyledDescriptionContainer = styled("div")`
 
 const tags = ["Free Shipping", "Resell"];
 
-export default function RelatedProducts() {
+// export default function RelatedProducts() {
+//   return (
+//     <StyledContainer>
+//       <StyledTitle>
+//         <ShoppingBagIcon />
+//         Related Product
+//       </StyledTitle>
+//       <StyledCard>
+//         <Image
+//           src="https://images.unsplash.com/photo-1584370848010-d7fe6bc767ec?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=200&h=200"
+//           height="100%" />
+//         <StyledDescriptionContainer>
+//           <h4>Awesome wonderful Jean</h4>
+//           <div>$500</div>
+//           <div>
+//             {tags.map((tag, index) => <Tag key={`related_product_tag_${index}`} style={{ fontSize: "11px", textTransform: "uppercase"}}>{tag}</Tag>)}
+//           </div>
+//         </StyledDescriptionContainer>
+//       </StyledCard>
+//       <StyledCard>
+//         <Image
+//           src="https://images.unsplash.com/photo-1618354691321-e851c56960d1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=200&h=200"
+//           height="100%" />
+//         <StyledDescriptionContainer>
+//           <h4>Awesome wonderful Jean</h4>
+//           <div>$500</div>
+//           <div>
+//             {tags.map((tag, index) => <Tag key={`related_product_tag_${index}`} style={{ fontSize: "11px", textTransform: "uppercase"}}>{tag}</Tag>)}
+//           </div>
+//         </StyledDescriptionContainer>
+//       </StyledCard>
+//     </StyledContainer>
+//   );
+// }
+
+// image:
+// "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8",
+// cost: {
+// new: 75,
+// },
+// desc: "The shirt has a round ribbed neckline and long sleeves that are dropped at the shoulders.",
+// tags: ["trend", "hot"],
+
+export default function RelatedProducts({ items }) {
   return (
     <StyledContainer>
       <StyledTitle>
         <ShoppingBagIcon />
         Related Product
       </StyledTitle>
-      <StyledCard>
-        <Image 
-          src="https://images.unsplash.com/photo-1584370848010-d7fe6bc767ec?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=200&h=200"
-          height="100%" />
-        <StyledDescriptionContainer>
-          <h4>Awesome wonderful Jean</h4>
-          <div>$500</div>
-          <div>
-            {tags.map((tag, index) => <Tag key={`related_product_tag_${index}`} style={{ fontSize: "11px", textTransform: "uppercase"}}>{tag}</Tag>)}
-          </div>
-        </StyledDescriptionContainer>
-      </StyledCard>
-      <StyledCard>
-        <Image 
-          src="https://images.unsplash.com/photo-1618354691321-e851c56960d1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=200&h=200"
-          height="100%" />
-        <StyledDescriptionContainer>
-          <h4>Awesome wonderful Jean</h4>
-          <div>$500</div>
-          <div>
-            {tags.map((tag, index) => <Tag key={`related_product_tag_${index}`} style={{ fontSize: "11px", textTransform: "uppercase"}}>{tag}</Tag>)}
-          </div>
-        </StyledDescriptionContainer>
-      </StyledCard>
+      {items.map((item, index) => (
+        <StyledCard>
+          <Image src={item["image"]} height="100%" />
+          <StyledDescriptionContainer>
+            <h4>{item["title"]}</h4>
+            <div>
+              {item["tags"].map((tag, index) => (
+                <Tag
+                  key={`related_product_tag_${index}`}
+                  style={{ fontSize: "11px", textTransform: "uppercase" }}
+                >
+                  {tag}
+                </Tag>
+              ))}
+            </div>
+
+            <div style={{ fontSize: "10px" }}>
+              {item?.cost?.new != null ? "New $" + item["cost"]["new"] : ""}{" "}
+            </div>
+            <div style={{ fontSize: "10px" }}>
+              {item?.cost?.used != null ? "Used $" + item["cost"]["used"] : ""}{" "}
+            </div>
+          </StyledDescriptionContainer>
+        </StyledCard>
+      ))}
     </StyledContainer>
   );
 }
