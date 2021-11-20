@@ -511,6 +511,7 @@ const subItmes = [
       new: 75,
     },
     desc: "The shirt has a round ribbed neckline and long sleeves that are dropped at the shoulders.",
+    tags: ["trend", "hot"],
   },
   {
     image:
@@ -520,6 +521,7 @@ const subItmes = [
       used: 100,
     },
     desc: "The coat has a fixed hood with drawstrings.",
+    tags: ["resell", "COST-EFFICIENCY"],
   },
   {
     image:
@@ -528,6 +530,7 @@ const subItmes = [
       new: 45,
     },
     desc: "The hat has a topstitched brim and a detachable Velcro patch detail.",
+    tags: ["brand-new", "Gentle"],
   },
 ];
 
