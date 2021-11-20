@@ -5,9 +5,10 @@ import { useParams } from "react-router-dom";
 import { generatePost } from "../data/posts";
 import { styled } from "@mui/material";
 import Avatar from '@mui/material/Avatar';
-import PersonIcon from '@mui/icons-material/Person';
+import { Person, MoreVert } from '@mui/icons-material';
 import { Tag } from 'antd';
 import { getRandomColor } from "utils/colors";
+import IconButton from '@mui/material/IconButton';
 
 const thumbnailOptions = {
   // 최대 화면에 160px 정도 크기로 나오는데
@@ -52,7 +53,7 @@ export default function Post() {
     <>
       <StyledProfileContainer>
         <Avatar sx={{ marginRight: "10px" }}>
-          <PersonIcon />
+          <Person />
         </Avatar>
         <div style={{ textAlign: "left" }}>
           <strong>{post.author}</strong>
@@ -60,6 +61,11 @@ export default function Post() {
             {post.tags.map(tag => <Tag color={getRandomColor()}>{tag}</Tag>)}
           </div>
         </div>
+        <IconButton 
+          aria-label="menu"
+          sx={{ padding: 0, marginLeft: "auto" }}>
+          <MoreVert />
+        </IconButton>
       </StyledProfileContainer>
       <StyledImage src={post.imageUrl && `${post.imageUrl}&${q}`} />
     </>
