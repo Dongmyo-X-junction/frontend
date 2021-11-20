@@ -33,7 +33,9 @@ export default function PostActions({ likes }) {
           <Share />
         </IconButton>
       </StyledContainer>
-      <div style={{ marginLeft: "10px" }}>Likes {likes + (liked ? 1 : 0)}</div>
+      <div style={{ marginLeft: "10px", fontWeight: "bold" }}>
+        Likes {likes + (liked ? 1 : 0)}
+      </div>
     </div>
   );
 }
