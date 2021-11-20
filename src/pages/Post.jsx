@@ -4,6 +4,8 @@ import BackButton from "components/BackButton";
 import { useParams } from "react-router-dom";
 import { generatePost } from "../data/posts";
 import { styled } from "@mui/material";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import { Button } from "@mui/material";
 import PostHeader from "components/post/PostHeader";
 import PostActions from "components/post/PostActions";
 import RelatedProducts from "components/post/RelatedProducts";
@@ -45,8 +47,19 @@ export default function Post() {
       <PostHeader {...post} />
       <StyledImage src={post.imageUrl && `${post.imageUrl}&${q}`} />
       <PostActions likes={post.likes} />
-      <p style={{ marginLeft: "20px", fontSize: "16px" }}>Ready to discover a world of creativity?</p>
+      <p style={{ marginLeft: "20px", fontSize: "16px" }}>
+        Ready to discover a world of creativity?
+      </p>
       <RelatedProducts />
+      <div style={{ marginTop: "10px", display: "flex" }}>
+        <Button
+          variant="contained"
+          startIcon={<ShoppingCartIcon />}
+          style={{ margin: "auto", width: "90%" }}
+        >
+          Buy
+        </Button>
+      </div>
     </>
   );
 }
