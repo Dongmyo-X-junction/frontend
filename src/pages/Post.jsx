@@ -9,6 +9,7 @@ import { Button } from "@mui/material";
 import PostHeader from "components/post/PostHeader";
 import PostActions from "components/post/PostActions";
 import RelatedProducts from "components/post/RelatedProducts";
+import { subItmes } from "../data/posts_detail";
 
 const thumbnailOptions = {
   // 최대 화면에 160px 정도 크기로 나오는데
@@ -50,7 +51,7 @@ export default function Post() {
       <p style={{ marginLeft: "20px", fontSize: "16px" }}>
         Ready to discover a world of creativity?
       </p>
-      <RelatedProducts />
+      <RelatedProducts items={subItmes} />
       <div style={{ marginTop: "10px", display: "flex" }}>
         <Button
           variant="contained"
