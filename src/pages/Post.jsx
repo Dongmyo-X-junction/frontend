@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom";
 import { generatePost } from "../data/posts";
 import { styled } from "@mui/material";
 import PostHeader from "components/post/PostHeader";
+import PostActions from "components/post/PostActions";
 
 const thumbnailOptions = {
   // 최대 화면에 160px 정도 크기로 나오는데
@@ -42,6 +43,7 @@ export default function Post() {
     <>
       <PostHeader {...post} />
       <StyledImage src={post.imageUrl && `${post.imageUrl}&${q}`} />
+      <PostActions likes={post.likes} />
     </>
   );
 }
