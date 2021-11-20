@@ -23,7 +23,6 @@ const StyledAppbarContainer = styled(Box)(({ theme }) => ({
   flexBasis: fixedAppbarHeight,
   flexShrink: 0,
   zIndex: theme.zIndex.appBar,
-  boxShadow: theme.shadows[5],
 }));
 
 const StyledNavbarContainer = styled(BottomNavigation)(({ theme }) => ({
@@ -41,7 +40,7 @@ const StyledContentsContainer = styled(Box)({
 
 const StyledLogo = styled("img")({
   position: "absolute",
-  width: 200,
+  width: 150,
   left: 0,
   right: 0,
   margin: "auto",
