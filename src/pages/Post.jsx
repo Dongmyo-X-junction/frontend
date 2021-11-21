@@ -59,7 +59,7 @@ export default function Post() {
           startIcon={<ShoppingCartIcon />}
           style={{ margin: "auto", width: "90%" }}
           component={Link}
-          to={"/posts/" + postId + "/buy"}
+          to={`/posts/${postId}/buy`}
         >
           Buy
         </Button>
