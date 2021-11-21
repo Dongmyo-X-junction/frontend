@@ -12,6 +12,7 @@ import { ViewportProvider } from "./components/ViewportProvider";
 import { LoadingProvider } from "./components/LoadingProvider";
 import User from "./pages/User";
 import Buy from "./pages/Buy";
+import Done from "pages/Done";
 
 const SlideContainer = () => {
   const location = useLocation();
@@ -22,6 +23,7 @@ const SlideContainer = () => {
         <Route path="/posts/:postId" component={Post} exact />
         <Route path="/user" component={User} />
         <Route path="/posts/:postId/buy" component={Buy} />
+        <Route path="/done" component={Done} />
       </SlideRoutes>
     </Switch>
   );

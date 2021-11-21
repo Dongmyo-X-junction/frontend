@@ -173,7 +173,7 @@ export default function Buy() {
           startIcon={<ShoppingCartIcon />}
           style={{ margin: "auto", width: "90%" }}
           component={Link}
-          to={"/posts/buy/done"}
+          to={"/done"}
         >
           {`Buy $ ${selectedItems.reduce((acc, cur) => acc + cur.cost, 0)}`}
         </Button>
