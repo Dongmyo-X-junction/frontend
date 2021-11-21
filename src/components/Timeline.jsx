@@ -1,9 +1,26 @@
 import TimelineItem from "./TimelineItem";
 import requestPosts from "../data/posts";
-import { ImageList } from "@mui/material";
+import { styled } from "@mui/material";
 import { useContext, useEffect, useState } from "react";
 import { ScrollContext } from "./ViewportProvider";
 import { LoadingContext } from "./LoadingProvider";
+
+const StyledImageList = styled("div")({
+  display: "flex",
+  flexDirection: "row",
+  "&>:not(:last-child)": {
+    marginRight: 5,
+  },
+});
+
+const StyledImageColumn = styled("div")({
+  maxWidth: 168,
+  display: "flex",
+  flexDirection: "column",
+  "&>*": {
+    marginBottom: 5,
+  },
+});
 
 export default function Timeline() {
   const [posts, setPosts] = useState([]);
@@ -31,21 +48,25 @@ export default function Timeline() {
     }
   }, [isScrollEnds]);
   return (
-    <ImageList
-      variant="masonry"
-      cols={3}
-      gap={8}
-      sx={{
-        width: "100%",
-        "& img": {
-          width: "100%",
-          height: "auto",
-        },
-      }}
-    >
-      {posts.map((post) => (
-        <TimelineItem {...post} key={post.id} />
-      ))}
-    </ImageList>
+    <StyledImageList>
+      <StyledImageColumn>
+        {posts.map(
+          (post, index) =>
+            index % 3 === 0 && <TimelineItem {...post} key={post.id} />
+        )}
+      </StyledImageColumn>
+      <StyledImageColumn>
+        {posts.map(
+          (post, index) =>
+            index % 3 === 1 && <TimelineItem {...post} key={post.id} />
+        )}
+      </StyledImageColumn>
+      <StyledImageColumn>
+        {posts.map(
+          (post, index) =>
+            index % 3 === 2 && <TimelineItem {...post} key={post.id} />
+        )}
+      </StyledImageColumn>
+    </StyledImageList>
   );
 }
