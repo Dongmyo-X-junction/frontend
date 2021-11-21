@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ImageListItem } from "@mui/material";
+import { Button, styled } from "@mui/material";
 
 // ref: https://unsplash.com/documentation#supported-parameters
 const thumbnailOptions = {
@@ -11,12 +11,23 @@ const thumbnailOptions = {
   crop: "faces",
 };
 
+const StyledLink = styled(Button)({
+  flexShrink: 1,
+  flexGrow: 0,
+  display: "flex",
+  flexDirection: "column",
+  "&>*": {
+    flexShrink: 1,
+    flexGrow: 0,
+  },
+});
+
 const q = new URLSearchParams(thumbnailOptions).toString();
 
 export default function Thumbnail({ imageUrl, id }) {
   return (
-    <ImageListItem component={Link} to={`/posts/${id}`}>
+    <StyledLink as={Link} to={`/posts/${id}`}>
       <img src={`${imageUrl}&${q}`} alt="thumbnail"></img>
-    </ImageListItem>
+    </StyledLink>
   );
 }
