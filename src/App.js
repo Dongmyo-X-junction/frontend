@@ -11,6 +11,7 @@ import theme from "./theme";
 import { ViewportProvider } from "./components/ViewportProvider";
 import { LoadingProvider } from "./components/LoadingProvider";
 import User from "./pages/User";
+import Buy from "./pages/Buy";
 
 const SlideContainer = () => {
   const location = useLocation();
@@ -18,8 +19,9 @@ const SlideContainer = () => {
     <Switch>
       <SlideRoutes location={location}>
         <Route path="/" component={Home} exact />
-        <Route path="/posts/:postId" component={Post} />
+        <Route path="/posts/:postId" component={Post} exact />
         <Route path="/user" component={User} />
+        <Route path="/posts/:postId/buy" component={Buy} />
       </SlideRoutes>
     </Switch>
   );

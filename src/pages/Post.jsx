@@ -10,6 +10,7 @@ import PostHeader from "components/post/PostHeader";
 import PostActions from "components/post/PostActions";
 import RelatedProducts from "components/post/RelatedProducts";
 import { subItmes } from "../data/posts_detail";
+import { Link } from "react-router-dom";
 
 const thumbnailOptions = {
   // 최대 화면에 160px 정도 크기로 나오는데
@@ -57,6 +58,8 @@ export default function Post() {
           variant="contained"
           startIcon={<ShoppingCartIcon />}
           style={{ margin: "auto", width: "90%" }}
+          component={Link}
+          to={"/posts/" + postId + "/buy"}
         >
           Buy
         </Button>
