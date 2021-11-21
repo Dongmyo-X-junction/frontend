@@ -1,6 +1,6 @@
-import { styled, IconButton, Avatar } from '@mui/material';
-import { Person, MoreVert } from '@mui/icons-material';
-import { Tag } from 'antd';
+import { styled, IconButton, Avatar } from "@mui/material";
+import { Person, MoreVert } from "@mui/icons-material";
+import { Tag } from "antd";
 
 import { getRandomColor } from "utils/colors";
 
@@ -20,12 +20,14 @@ export default function PostHeader({ author, tags }) {
       <div style={{ textAlign: "left" }}>
         <strong>{author}</strong>
         <div>
-            {tags.map((tag, index) => <Tag color={getRandomColor()} key={`tag_${index}`}>{tag}</Tag>)}
+          {tags.map((tag, index) => (
+            <Tag color={getRandomColor(tag)} key={`tag_${index}`}>
+              {tag}
+            </Tag>
+          ))}
         </div>
       </div>
-      <IconButton
-        aria-label="menu"
-        sx={{ padding: 0, marginLeft: "auto" }}>
+      <IconButton aria-label="menu" sx={{ padding: 0, marginLeft: "auto" }}>
         <MoreVert />
       </IconButton>
     </StyledContainer>
